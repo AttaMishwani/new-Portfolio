@@ -82,6 +82,60 @@ html {
   background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
 }
 
+.projects-wrap {
+  position: relative;
+}
+
+.projects-wrap::before,
+.projects-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 110px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.projects-wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(5, 7, 13, 0.98), rgba(5, 7, 13, 0));
+}
+
+.projects-wrap::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(5, 7, 13, 0.98), rgba(5, 7, 13, 0));
+}
+
+.projects-track {
+  position: relative;
+  z-index: 1;
+}
+
+.image-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.08);
+}
+
+.image-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.image-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.image-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.image-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
 .glass-panel {
   box-shadow: 0 30px 80px -60px rgba(8, 15, 30, 0.8);
 }

@@ -8,11 +8,9 @@ const Nav = () => {
     >
       <div className="flex items-center gap-3">
         <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs uppercase tracking-[0.3em] text-white/70">
-          Atta
+          Atta Ur Rehman
         </span>
-        <span className="hidden text-xs uppercase tracking-[0.4em] text-white/50 md:block">
-          Frontend Portfolio
-        </span>
+    
       </div>
       <div className="hidden items-center gap-8 text-xs uppercase tracking-[0.3em] text-white/60 md:flex">
         {"Home About Skills Projects Contact".split(" ").map((item) => (

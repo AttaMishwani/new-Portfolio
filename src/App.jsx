@@ -25,6 +25,7 @@ function App() {
       smoothTouch: false,
       lerp: 0.08,
     })
+    let projectResizeHandler
 
     const onTick = (time) => {
       lenis.raf(time * 1000)
@@ -131,7 +132,12 @@ function App() {
             scrollTween.scrollTrigger?.kill()
             scrollTween.kill()
           }
-          const totalScroll = track.scrollWidth - wrap.offsetWidth
+          const totalScroll = Math.max(0, track.scrollWidth - wrap.offsetWidth)
+          if (totalScroll === 0) {
+            gsap.set(track, { x: 0 })
+            ScrollTrigger.refresh()
+            return
+          }
           scrollTween = gsap.to(track, {
             x: -totalScroll,
             ease: "none",
@@ -148,7 +154,8 @@ function App() {
 
         updateScroll()
         ScrollTrigger.refresh()
-        window.addEventListener("resize", updateScroll)
+        projectResizeHandler = updateScroll
+        window.addEventListener("resize", projectResizeHandler)
       }
 
       gsap.to(".orb", {
@@ -186,6 +193,9 @@ function App() {
         el.removeEventListener("mouseleave", handleMagnetLeave)
       })
       ctx.revert()
+      if (projectResizeHandler) {
+        window.removeEventListener("resize", projectResizeHandler)
+      }
       gsap.ticker.remove(onTick)
       lenis.destroy()
     }
