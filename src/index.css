@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --void: #05070d;
+  --accent: #6aff9f;
+  --accent-2: #4cc3ff;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0b1020 0%, #05070d 52%, #020409 100%);
+  color: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.bg-void {
+  background-color: var(--void);
+}
+
+.section-block {
+  padding: 110px 0;
+}
+
+.bg-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 140px 140px;
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+}
+
+.shadow-glow {
+  box-shadow: 0 20px 60px -30px rgba(106, 255, 159, 0.6);
+}
+
+.split-text {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.15em;
+}
+
+.split-word {
+  display: inline-flex;
+  gap: 0.02em;
+}
+
+.char {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+.magnetic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-card {
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.glass-panel {
+  box-shadow: 0 30px 80px -60px rgba(8, 15, 30, 0.8);
+}
+
+@media (max-width: 640px) {
+  .section-block {
+    padding: 80px 0;
+  }
+}
